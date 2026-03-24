@@ -1,0 +1,7 @@
+{
+  "name": "aditya-patil",
+  "private": true,
+  "scripts": {
+    "build": "echo \"No build step\""
+  }
+}
