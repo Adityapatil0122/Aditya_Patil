@@ -8,7 +8,8 @@
       "Bash(where node:*)",
       "Bash(where npm:*)",
       "Bash(where npx:*)",
-      "Bash(where py:*)"
+      "Bash(where py:*)",
+      "WebFetch(domain:api.github.com)"
     ]
   }
 }

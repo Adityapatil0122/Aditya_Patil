@@ -592,14 +592,20 @@ ul {
 .projects-h-wrapper {
     overflow: hidden;
     width: 100%;
+    padding-top: 80px;
+}
+
+.projects-h-title {
+    max-width: 960px;
+    margin: 0 auto 40px;
 }
 
 .projects-h-track {
     display: flex;
     gap: 32px;
-    padding: 0 48px 40px;
+    padding: 0 48px;
     width: max-content;
-    align-items: stretch;
+    align-items: center;
 }
 
 .project-card-h {
@@ -704,6 +710,51 @@ ul {
 
 .project-link:hover {
     color: var(--accent);
+}
+
+.project-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 320px;
+    min-width: 280px;
+    border-style: dashed;
+    text-decoration: none;
+    transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.project-cta-card:hover {
+    border-color: var(--accent);
+    background: rgba(200, 255, 0, 0.03);
+}
+
+.project-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-cta-inner > i {
+    font-size: 2.5rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.project-cta-card:hover .project-cta-inner > i {
+    color: var(--accent);
+}
+
+.project-cta-card .project-name {
+    margin-bottom: 0;
+}
+
+.project-cta-card .project-subtitle {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 /* ==========================================
@@ -925,8 +976,14 @@ body::after {
         padding-right: 0;
     }
 
-    .projects-title-wrap {
+    .projects-h-wrapper {
+        min-height: auto;
+        padding-top: 60px;
+    }
+
+    .projects-h-title {
         padding: 0 20px;
+        margin-bottom: 24px;
     }
 
     .projects-h-track {
@@ -940,6 +997,12 @@ body::after {
         width: 100%;
         min-width: unset;
         padding: 24px;
+    }
+
+    .project-cta-card {
+        width: 100%;
+        min-width: unset;
+        padding: 48px 24px;
     }
 
     .project-name {
@@ -1060,7 +1123,7 @@ body::after {
         padding: 52px 16px;
     }
 
-    .projects-title-wrap {
+    .projects-h-title {
         padding: 0 16px;
     }
 

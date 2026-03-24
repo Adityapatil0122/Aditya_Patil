@@ -287,6 +287,14 @@ function initHorizontalScroll() {
     const track = document.querySelector('.projects-h-track');
     if (!wrapper || !track) return;
 
+    // Dynamically center the first card in the viewport
+    const firstCard = track.querySelector('.project-card-h');
+    if (firstCard) {
+        const sidePad = (wrapper.offsetWidth - firstCard.offsetWidth) / 2;
+        track.style.paddingLeft = Math.max(sidePad, 48) + 'px';
+        track.style.paddingRight = Math.max(sidePad, 48) + 'px';
+    }
+
     const scrollDist = track.scrollWidth - wrapper.offsetWidth;
     if (scrollDist <= 0) return;
 
