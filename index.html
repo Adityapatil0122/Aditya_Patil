@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Patil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <span class="preloader-text">AP</span>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <svg id="custom-cursor" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3 L20 19 L12 15 L4 19 Z"
+              fill="rgba(15,25,45,0.9)"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linejoin="round"/>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-hover>About</a>
+            <a href="#experience" class="nav-link" data-hover>Experience</a>
+            <a href="#projects" class="nav-link" data-hover>Projects</a>
+            <a href="#contact" class="nav-link" data-hover>Contact</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="#about" class="mobile-menu-link">About</a>
+            <a href="#experience" class="mobile-menu-link">Experience</a>
+            <a href="#projects" class="mobile-menu-link">Projects</a>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <canvas id="hero-particles" class="hero-particles"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting">👋 Hi, I'm</p>
+            <h1 class="hero-name">Aditya Patil</h1>
+            <p class="hero-title">Full Stack Developer</p>
+            <p class="hero-location"><i class="ph ph-map-pin"></i> Pune, India</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary" data-hover>View Work</a>
+                <a href="#contact" class="btn btn-outline" data-hover>Get in Touch</a>
+                <a href="resumee.pdf" download class="btn btn-outline btn-resume"
+                   data-hover data-upload-date="2026-03-19">
+                    <i class="ph ph-download-simple"></i> Download CV
+                    <span class="resume-badge" id="resume-badge" style="display:none">Outdated</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <h2 class="section-title">About</h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I'm a Full Stack Developer at <strong>Finlec Technology LLP</strong>, building production-ready web applications end-to-end — from UI/UX design to backend architecture and deployment.</p>
+                    <p>Currently pursuing my B.Tech in Computer Engineering at D.Y. Patil University, I specialize in crafting clean, scalable solutions using modern frameworks and AI-assisted development tools.</p>
+                </div>
+                <div class="skills-grid reveal">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-hover>Java</span>
+                            <span class="skill-tag" data-hover>JavaScript</span>
+                            <span class="skill-tag" data-hover>TypeScript</span>
+                            <span class="skill-tag" data-hover>HTML5</span>
+                            <span class="skill-tag" data-hover>CSS3</span>
+                            <span class="skill-tag" data-hover>SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-hover>Next.js</span>
+                            <span class="skill-tag" data-hover>Spring Boot</span>
+                            <span class="skill-tag" data-hover>Tailwind CSS</span>
+                            <span class="skill-tag" data-hover>Hibernate/JPA</span>
+                            <span class="skill-tag" data-hover>Bootstrap</span>
+                            <span class="skill-tag" data-hover>Thymeleaf</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-hover>Git</span>
+                            <span class="skill-tag" data-hover>REST APIs</span>
+                            <span class="skill-tag" data-hover>MySQL</span>
+                            <span class="skill-tag" data-hover>Postman</span>
+                            <span class="skill-tag" data-hover>Figma</span>
+                            <span class="skill-tag" data-hover>Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-alt" id="experience">
+        <div class="section-inner">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-card reveal" data-hover>
+                <div class="exp-header">
+                    <div>
+                        <h3 class="exp-role">Full Stack Developer</h3>
+                        <p class="exp-company">Finlec Technology LLP</p>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="exp-date">Feb 2026 — Present</span>
+                        <span class="exp-location">Pune, India</span>
+                    </div>
+                </div>
+                <ul class="exp-list">
+                    <li>Develop full-stack web applications handling UI/UX design, frontend, backend, database integration, and deployment</li>
+                    <li>Collaborate directly with clients to gather requirements and deliver production-ready solutions from scratch</li>
+                    <li>Accelerate development using AI-assisted tools — Codex, Claude, Figma, Antigravity</li>
+                    <li>Build and integrate responsive user interfaces using modern design tools and frameworks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-inner projects-title-wrap">
+            <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-h-wrapper">
+            <div class="projects-h-track">
+
+                <div class="project-card-h" data-hover>
+                    <div class="project-number">01</div>
+                    <h3 class="project-name">Finlec.in</h3>
+                    <p class="project-subtitle">Full-Stack Financial Services Platform</p>
+                    <div class="project-tech">
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind CSS</span>
+                        <span>NextAuth.js</span>
+                    </div>
+                    <p class="project-desc">Built and deployed a financial services platform with real-time mutual fund data integration via MFAPI.in, secure authentication, and responsive cross-device UI. Managed deployment on remote servers via SSH.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" data-hover>
+                            <i class="ph ph-arrow-square-out"></i> Live
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card-h" data-hover>
+                    <div class="project-number">02</div>
+                    <h3 class="project-name">TalentTrack</h3>
+                    <p class="project-subtitle">AI-Powered Recruitment Management System</p>
+                    <div class="project-tech">
+                        <span>Spring Boot</span>
+                        <span>MySQL</span>
+                        <span>Gemini API</span>
+                        <span>Java</span>
+                    </div>
+                    <p class="project-desc">Engineered a recruitment platform managing 500+ candidates with RESTful APIs, Google Gemini-powered automated communications, role-based access control, and an analytics dashboard for hiring metrics.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" data-hover>
+                            <i class="ph ph-github-logo"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section section-alt" id="education">
+        <div class="section-inner">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="edu-card reveal" data-hover>
+                    <div class="edu-degree">B.Tech in Computer Engineering</div>
+                    <div class="edu-school">D.Y. Patil University</div>
+                    <div class="edu-meta">
+                        <span>Pune, India</span>
+                        <span>2022 — 2026</span>
+                    </div>
+                </div>
+                <div class="edu-card reveal" data-hover>
+                    <div class="edu-degree">HSC — Computer Hardware &amp; Software</div>
+                    <div class="edu-school">Higher Secondary Certificate</div>
+                    <div class="edu-meta">
+                        <span>Satara, India</span>
+                        <span>2020 — 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-inner contact-section">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-text reveal">I'm always open to new opportunities and interesting projects.</p>
+            <div class="contact-links reveal">
+                <a href="mailto:adityalpatil2004@gmail.com" class="contact-link" data-hover>
+                    <i class="ph ph-envelope-simple"></i>
+                    Email
+                </a>
+                <a href="https://linkedin.com/in/" class="contact-link" data-hover target="_blank">
+                    <i class="ph ph-linkedin-logo"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/" class="contact-link" data-hover target="_blank">
+                    <i class="ph ph-github-logo"></i>
+                    GitHub
+                </a>
+                <a href="https://www.instagram.com/aditya_patil_0122?utm_source=qr&igsh=MWw3dnB3NnNkb3FhZA==" class="contact-link" data-hover target="_blank">
+                    <i class="ph ph-instagram-logo"></i>
+                    Instagram
+                </a>
+                <a href="tel:+919309009518" class="contact-link" data-hover>
+                    <i class="ph ph-phone"></i>
+                    Phone
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-copy">&copy; 2026 Aditya Patil. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
