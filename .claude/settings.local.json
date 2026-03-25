@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"C:/portfolio/index.html\")",
+      "Bash(start \"\" \"http://localhost:3000\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npx:*)",
+      "Bash(curl -L -o \"C:/portfolio/whatsapp.png\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png\")"
+    ]
+  }
+}

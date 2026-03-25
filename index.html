@@ -35,6 +35,7 @@
             <a href="#about" class="nav-link" data-hover>About</a>
             <a href="#experience" class="nav-link" data-hover>Experience</a>
             <a href="#projects" class="nav-link" data-hover>Projects</a>
+            <a href="#services" class="nav-link" data-hover>Services</a>
             <a href="#contact" class="nav-link" data-hover>Contact</a>
         </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -50,6 +51,7 @@
             <a href="#about" class="mobile-menu-link">About</a>
             <a href="#experience" class="mobile-menu-link">Experience</a>
             <a href="#projects" class="mobile-menu-link">Projects</a>
+            <a href="#services" class="mobile-menu-link">Services</a>
             <a href="#contact" class="mobile-menu-link">Contact</a>
         </div>
     </div>
@@ -64,7 +66,7 @@
             <p class="hero-location"><i class="ph ph-map-pin"></i> Pune, India</p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary" data-hover>View Work</a>
-                <a href="#contact" class="btn btn-outline" data-hover>Get in Touch</a>
+                <a href="#contact" class="btn btn-outline" data-hover>Hire Me</a>
                 <a href="resumee.pdf" download class="btn btn-outline btn-resume"
                    data-hover data-upload-date="2026-03-19">
                     <i class="ph ph-download-simple"></i> Download CV
@@ -223,6 +225,59 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="section section-alt" id="services">
+        <div class="section-inner">
+            <h2 class="section-title">What I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card reveal" data-hover>
+                    <div class="service-icon"><i class="ph ph-monitor"></i></div>
+                    <h3 class="service-title">Full Stack Web Apps</h3>
+                    <p class="service-desc">End-to-end web applications with modern frontends and robust backend architectures, built for scale.</p>
+                    <div class="service-tags">
+                        <span>Next.js</span>
+                        <span>Spring Boot</span>
+                        <span>React</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+                <div class="service-card reveal" data-hover>
+                    <div class="service-icon"><i class="ph ph-robot"></i></div>
+                    <h3 class="service-title">AI Chatbots & Automation</h3>
+                    <p class="service-desc">Intelligent bots and workflow automation powered by AI APIs to streamline your business operations.</p>
+                    <div class="service-tags">
+                        <span>Gemini API</span>
+                        <span>Claude API</span>
+                        <span>Python</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+                <div class="service-card reveal" data-hover>
+                    <div class="service-icon"><i class="ph ph-plugs-connected"></i></div>
+                    <h3 class="service-title">API Integrations</h3>
+                    <p class="service-desc">Seamless third-party API connections — payment gateways, CRMs, analytics, and custom REST endpoints.</p>
+                    <div class="service-tags">
+                        <span>REST APIs</span>
+                        <span>OAuth</span>
+                        <span>Webhooks</span>
+                        <span>Postman</span>
+                    </div>
+                </div>
+                <div class="service-card reveal" data-hover>
+                    <div class="service-icon"><i class="ph ph-globe"></i></div>
+                    <h3 class="service-title">Business Websites</h3>
+                    <p class="service-desc">Fast, responsive, SEO-friendly websites designed to convert visitors into customers.</p>
+                    <div class="service-tags">
+                        <span>Tailwind CSS</span>
+                        <span>Figma</span>
+                        <span>SEO</span>
+                        <span>Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
     <section class="section section-alt" id="education">
         <div class="section-inner">
@@ -251,9 +306,55 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="section-inner contact-section">
-            <h2 class="section-title">Let's Connect</h2>
+            <h2 class="section-title">Hire Me</h2>
             <p class="contact-text reveal">I'm always open to new opportunities and interesting projects.</p>
-            <div class="contact-links reveal">
+            <form class="contact-form reveal" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full_name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project_type" required>
+                            <option value="" disabled selected>Select a project type</option>
+                            <option value="Web App">Web App</option>
+                            <option value="AI Bot">AI Bot</option>
+                            <option value="Business Website">Business Website</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget" required>
+                            <option value="" disabled selected>Select budget</option>
+                            <option value="Under ₹10k">Under ₹10k</option>
+                            <option value="₹10k–25k">₹10k–25k</option>
+                            <option value="₹25k–50k">₹25k–50k</option>
+                            <option value="₹50k+">₹50k+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit" data-hover>
+                    <i class="ph ph-paper-plane-tilt"></i> Send Message
+                </button>
+            </form>
+            <div class="form-success" id="form-success" style="display:none;">
+                <i class="ph ph-check-circle"></i>
+                <p>Message sent successfully! I'll get back to you soon.</p>
+            </div>
+            <div class="contact-links reveal" style="margin-top: 48px;">
                 <a href="mailto:adityalpatil2004@gmail.com" class="contact-link" data-hover>
                     <i class="ph ph-envelope-simple"></i>
                     Email
@@ -283,6 +384,12 @@
         <p class="footer-copy">&copy; 2026 Aditya Patil. All rights reserved.</p>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919309009518?text=Hey%20Aditya!%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project%20with%20you." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <img class="whatsapp-icon" src="whatsapp.png" alt="WhatsApp" />
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>

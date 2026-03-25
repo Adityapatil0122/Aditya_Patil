@@ -260,6 +260,7 @@ ul {
 .mobile-menu.active .mobile-menu-link:nth-child(2) { transition-delay: 0.16s; }
 .mobile-menu.active .mobile-menu-link:nth-child(3) { transition-delay: 0.24s; }
 .mobile-menu.active .mobile-menu-link:nth-child(4) { transition-delay: 0.32s; }
+.mobile-menu.active .mobile-menu-link:nth-child(5) { transition-delay: 0.40s; }
 
 .mobile-menu-link:hover {
     color: var(--accent);
@@ -801,6 +802,93 @@ ul {
 }
 
 /* ==========================================
+   SERVICES
+   ========================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    transition: all 0.3s ease;
+    cursor: none;
+}
+
+.service-card:hover {
+    border-color: rgba(200, 255, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.service-icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.service-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.service-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.service-tags span {
+    font-size: 0.72rem;
+    color: var(--accent);
+    padding: 3px 10px;
+    border: 1px solid rgba(200, 255, 0, 0.2);
+    border-radius: 100px;
+}
+
+/* ==========================================
+   WHATSAPP FLOATING BUTTON
+   ========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9996;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    filter: drop-shadow(0 3px 10px rgba(37, 211, 102, 0.3));
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================
    CONTACT
    ========================================== */
 .contact-section {
@@ -838,6 +926,115 @@ ul {
     color: var(--accent);
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(200, 255, 0, 0.08);
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 640px;
+    margin: 0 auto 0;
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.form-group:last-child:not(.form-row .form-group) {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: var(--font-heading);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    cursor: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23888888' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.form-group select option {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 0.95rem;
+    border: none;
+    font-family: var(--font-body);
+}
+
+.form-success {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 32px;
+    background: var(--card);
+    border: 1px solid rgba(200, 255, 0, 0.2);
+    border-radius: var(--radius);
+}
+
+.form-success i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.form-success p {
+    color: var(--text-muted);
+    font-size: 1rem;
 }
 
 /* ==========================================
@@ -1067,9 +1264,22 @@ body::after {
         gap: 4px;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+
     .contact-text {
         font-size: 1rem;
         margin-bottom: 28px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
     .contact-links {
@@ -1082,6 +1292,18 @@ body::after {
         justify-content: center;
         padding: 14px 24px;
         font-size: 0.88rem;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .whatsapp-icon {
+        width: 52px;
+        height: 52px;
     }
 
     .mobile-menu-link {

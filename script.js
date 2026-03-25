@@ -1,4 +1,11 @@
 // ==========================================
+// EMAILJS CONFIG — Fill in your own IDs
+// ==========================================
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+// ==========================================
 // INIT — GSAP + LENIS
 // ==========================================
 gsap.registerPlugin(ScrollTrigger);
@@ -223,6 +230,7 @@ function initHeroParticles() {
 }
 initHeroParticles();
 
+
 // ==========================================
 // HERO PARALLAX (GSAP ScrollTrigger — Lenis compatible)
 // ==========================================
@@ -352,7 +360,7 @@ lenis.on('scroll', ({ scroll }) => {
 });
 
 // Active nav highlight
-const navSections = ['about', 'experience', 'projects', 'education', 'contact'];
+const navSections = ['about', 'experience', 'projects', 'services', 'education', 'contact'];
 navSections.forEach(id => {
     const section = document.getElementById(id);
     if (!section) return;
@@ -444,6 +452,40 @@ document.addEventListener('keydown', (e) => {
         konamiIdx = 0;
     }
 });
+
+// ==========================================
+// EMAILJS CONTACT FORM
+// ==========================================
+(function initContactForm() {
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('.btn-submit');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="ph ph-spinner"></i> Sending...';
+        btn.disabled = true;
+
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+            .then(() => {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+                gsap.fromTo(successMsg, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
+            })
+            .catch((err) => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                alert('Failed to send message. Please try again or email directly.');
+                console.error('EmailJS error:', err);
+            });
+    });
+})();
 
 function triggerEasterEgg() {
     for (let i = 0; i < 90; i++) {
