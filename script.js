@@ -1,10 +1,9 @@
 // ==========================================
 // EMAILJS CONFIG — Fill in your own IDs
 // ==========================================
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-
+const EMAILJS_PUBLIC_KEY = '_7l7_BGZY8ONIQtdl';
+const EMAILJS_SERVICE_ID = 'service_0pr0j3j';
+const EMAILJS_TEMPLATE_ID = 'template_zfuga7h';
 // ==========================================
 // INIT — GSAP + LENIS
 // ==========================================
@@ -48,7 +47,7 @@ document.addEventListener('mousemove', (e) => {
     if (diff < -180) diff += 360;
     currentAngle += diff * 0.18;
     cursorEl.style.left = (posX - 12) + 'px';
-    cursorEl.style.top  = (posY - 3) + 'px';
+    cursorEl.style.top = (posY - 3) + 'px';
     cursorEl.style.transform = `rotate(${currentAngle}deg)`;
     requestAnimationFrame(tick);
 })();
@@ -96,15 +95,15 @@ window.addEventListener('load', () => {
         delay: 0.6,
         ease: 'power2.in'
     })
-    .to(preloader, {
-        yPercent: -100,
-        duration: 0.9,
-        ease: 'power4.inOut',
-        onComplete: () => {
-            preloader.remove();
-            animateHero();
-        }
-    });
+        .to(preloader, {
+            yPercent: -100,
+            duration: 0.9,
+            ease: 'power4.inOut',
+            onComplete: () => {
+                preloader.remove();
+                animateHero();
+            }
+        });
 });
 
 // ==========================================
@@ -123,29 +122,29 @@ function animateHero() {
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
     )
-    .to(chars, {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        duration: 0.7,
-        stagger: 0.035,
-        ease: 'back.out(1.7)'
-    }, '-=0.3')
-    .fromTo('.hero-title',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
-        '-=0.3'
-    )
-    .fromTo('.hero-location',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
-        '-=0.3'
-    )
-    .fromTo('.hero-cta',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-        '-=0.2'
-    );
+        .to(chars, {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.7,
+            stagger: 0.035,
+            ease: 'back.out(1.7)'
+        }, '-=0.3')
+        .fromTo('.hero-title',
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
+            '-=0.3'
+        )
+        .fromTo('.hero-location',
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+            '-=0.3'
+        )
+        .fromTo('.hero-cta',
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+            '-=0.2'
+        );
 }
 
 // ==========================================
@@ -435,9 +434,9 @@ if (!('ontouchstart' in window)) document.querySelectorAll('.btn, .contact-link,
 // KONAMI CODE EASTER EGG
 // ==========================================
 const konamiCode = [
-    'ArrowUp','ArrowUp','ArrowDown','ArrowDown',
-    'ArrowLeft','ArrowRight','ArrowLeft','ArrowRight',
-    'KeyB','KeyA'
+    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+    'KeyB', 'KeyA'
 ];
 let konamiIdx = 0;
 
@@ -472,7 +471,16 @@ document.addEventListener('keydown', (e) => {
         btn.innerHTML = '<i class="ph ph-spinner"></i> Sending...';
         btn.disabled = true;
 
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+        const templateParams = {
+            title: form.project_type.value,
+            name: form.full_name.value,
+            from_name: form.full_name.value,
+            from_email: form.email.value,
+            email: form.email.value,
+            message: `Project: ${form.project_type.value}\nBudget: ${form.budget.value}\n\n${form.message.value}`,
+        };
+
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
             .then(() => {
                 form.style.display = 'none';
                 successMsg.style.display = 'block';
