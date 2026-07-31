@@ -1,17 +1,17 @@
-﻿# Aditya Patil - Portfolio
+﻿# Aditya Patil — Portfolio
 
-A modern, animated personal portfolio showcasing work, experience, and contact details. Built as a fast, responsive single-page site.
+Personal portfolio for Aditya Patil, a Full Stack Developer Intern at Finlec Technologies LLP. It showcases experience, selected projects, services, and contact information in a responsive single-page site.
 
-## Live Site
+## Live site
 
-- https://adityapatil0122.github.io/Aditya_Patil/
+- [adityapatil.shop](https://adityapatil.shop)
 
-## Highlights
+## Features
 
 - Hero section with particles, custom cursor, and scroll progress
 - About, experience, projects, and contact sections
 - Responsive navigation with mobile menu
-- Downloadable resume
+- Downloadable CV: `Aditya_CV.pdf`
 
 ## Tech Stack
 
@@ -26,7 +26,7 @@ A modern, animated personal portfolio showcasing work, experience, and contact d
 - index.html
 - style.css
 - script.js
-- resumee.pdf
+- Aditya_CV.pdf
 
 ## Run Locally
 
@@ -48,4 +48,4 @@ After enabling Pages, your site will be available at the Live Site URL above.
 
 ## Update Resume
 
-Replace resumee.pdf with a new file using the same name, then commit and push.
+Replace `Aditya_CV.pdf` and keep the same filename so the download link continues to work.
